@@ -16,7 +16,6 @@ import Button from '@mui/material/Button';
 import { Link, Outlet } from 'react-router-dom'
 import { ListItemIcon } from '@mui/material';
 import HomeIcon from '@mui/icons-material/Home';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 const drawerWidth = 200;
@@ -114,7 +113,8 @@ function DrawerAppBar(props) {
           {drawer}
         </Drawer>
       </nav>
-      <Box component="main" sx={{ p: 3 }}>
+      <Box component="main" sx={{ p: 3, width: '100%' }}>
+        {/* width: '100%' make the list could display 100% */}
         <Toolbar />
         <Outlet />
       </Box>
