@@ -68,6 +68,7 @@ function DrawerAppBar(props) {
 
   return (
     <Box sx={{ display: 'flex' }}>
+
       <CssBaseline />
       <AppBar component="nav">
         <Toolbar>
@@ -96,6 +97,7 @@ function DrawerAppBar(props) {
           </Box>
         </Toolbar>
       </AppBar>
+
       <nav>
         <Drawer
           container={container}
@@ -119,6 +121,7 @@ function DrawerAppBar(props) {
         <Outlet />
       </Box>
     </Box>
+
   )
 
 }

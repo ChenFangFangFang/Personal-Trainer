@@ -1,7 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { StrictMode } from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
 import App from './App';
 import Home from './components/Home'
 import Customer from './components/Customer';
@@ -14,12 +14,15 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        path: "home",
-        element: <Home />
+        element: <Navigate to="/home" />
       },
       {
         path: "customer",
         element: <Customer />
+      },
+      {
+        path: "home",
+        element: <Home />
       },
       {
         path: "training",
