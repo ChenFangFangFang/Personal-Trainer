@@ -5,7 +5,7 @@ import AddCustomer from "./AddCustomer";
 import "ag-grid-community/styles/ag-grid.css"; // Mandatory CSS required by the Data Grid
 import "ag-grid-community/styles/ag-theme-quartz.css"; // Optional Theme applied to the Data Grid
 import EditCustomer from "./EditCustomer";
-
+import DeleteCustomer from "./DeleteCustomer";
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
 
@@ -35,12 +35,12 @@ export default function Customer() {
         { field: "email", filter: true, floatingFilter: true, },
         { field: "phone", filter: true, floatingFilter: true, },
         {
-            headerName: 'Edit',
+            headerName: 'Option',
             sortable: false,
             cellRenderer: (row) => (
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                     <EditCustomer updateCustomer={updateCustomer} customer={row.data} />
-
+                    <DeleteCustomer deleteCustomer={deleteCustomer} customer={row.data} />
                 </div>
             ),
             pinned: "right",
@@ -75,6 +75,20 @@ export default function Customer() {
                 setAlert({
                     open: true,
                     message: 'Customer updated successfully',
+                    severity: 'success'
+                });
+            })
+            .catch(error => console.log('Error fetching data:', error))
+    }
+    const deleteCustomer = (customer, link) => {
+        fetch(link, {
+            method: 'DELETE',
+        })
+            .then(res => {
+                fetchData()
+                setAlert({
+                    open: true,
+                    message: 'Customer delete successfully',
                     severity: 'success'
                 });
             })

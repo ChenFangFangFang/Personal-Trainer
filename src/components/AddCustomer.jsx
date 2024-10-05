@@ -12,25 +12,26 @@ import DialogTitle from '@mui/material/DialogTitle';
 
 export default function AddCustomer(props) {
     const [open, setOpen] = React.useState(false);
-    const [customer, SetCustomer] = React.useState({
+    const [customer, setCustomer] = React.useState({
         firstname: '', lastname: '', streetaddress: '', postcode: '', city: '', email: '', phone: ''
     })
     const handleClickOpen = () => {
         setOpen(true);
     };
     const handelInputChange = (event) => {
-        SetCustomer({ ...customer, [event.target.name]: event.target.value })
+        setCustomer({ ...customer, [event.target.name]: event.target.value })
     }
 
     const handleClose = () => {
         setOpen(false);
-        SetCustomer({
+        setCustomer({
             firstname: '', lastname: '', streetaddress: '', postcode: '', city: '', email: '', phone: ''
         }); // Reset customer state when dialog is closed
     };
 
     const addCustomer = () => {
         props.addCustomer(customer);
+
         handleClose();
     };
 
