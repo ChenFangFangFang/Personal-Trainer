@@ -8,6 +8,7 @@ import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
 import AddTraining from "./AddTraining";
 import DeleteTraining from "./DeleteTraining"
+
 export default function Training() {
     const [trainings, SetTrainings] = useState([])
     const [alert, setAlert] = useState({
@@ -91,9 +92,11 @@ export default function Training() {
             pinned: "right",
         }
     ])
+
+
+
     return (
         <div>
-
             <AddTraining addTraining={addTraining} />
             <div style={{ width: '100%' }}>
                 <div className="ag-theme-quartz" style={{ width: '100%', height: 600 }}>

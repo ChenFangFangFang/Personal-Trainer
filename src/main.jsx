@@ -6,7 +6,8 @@ import App from './App';
 import Home from './components/Home'
 import Customer from './components/Customer';
 import Training from './components/Training';
-
+import Calendar from './components/Calendar';
+import Statistics from './components/Statistics';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -27,6 +28,12 @@ const router = createBrowserRouter([
       {
         path: "training",
         element: <Training />
+      }, {
+        path: "calendar",
+        element: <Calendar />
+      }, {
+        path: "statistics",
+        element: <Statistics />
       }
     ]
   }

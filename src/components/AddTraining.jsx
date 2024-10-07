@@ -14,7 +14,6 @@ import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
-import Grid from '@mui/material/Grid';
 
 export default function AddTraining(props) {
     const [open, setOpen] = React.useState(false);

@@ -18,11 +18,15 @@ import { ListItemIcon } from '@mui/material';
 import HomeIcon from '@mui/icons-material/Home';
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import BarChartIcon from '@mui/icons-material/BarChart';
 const drawerWidth = 200;
 const navItems = [
   { name: 'Home', icon: <HomeIcon /> },
   { name: 'Customer', icon: <PermIdentityIcon /> },
-  { name: 'Training', icon: <FitnessCenterIcon /> }
+  { name: 'Training', icon: <FitnessCenterIcon /> },
+  { name: 'Calendar', icon: <CalendarMonthIcon /> },
+  { name: 'Statistics', icon: <BarChartIcon /> }
 ];
 function DrawerAppBar(props) {
   const { window } = props;
