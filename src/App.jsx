@@ -53,7 +53,10 @@ function DrawerAppBar(props) {
       <List>
         {navItems.map((item) => (
           <ListItem key={item.name} disablePadding>
-            <ListItemButton sx={{ display: 'flex', alignItems: 'left', textAlign: 'left' }}>
+            <ListItemButton
+              component={Link}
+              to={`/${item.name.toLowerCase()}`}
+              sx={{ display: 'flex', alignItems: 'left', textAlign: 'left' }}>
               <ListItemIcon sx={{ marginRight: '-12px', color: (theme) => theme.palette.primary.main }}>
                 {item.icon}
               </ListItemIcon>
