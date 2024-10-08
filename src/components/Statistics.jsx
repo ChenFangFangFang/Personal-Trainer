@@ -27,7 +27,7 @@ export default function Statistics() {
 
 
     return (
-        <div style={{ width: '100%', minHeight: '300px', maxHeight: '500px' }}>
+        <div style={{ width: '100%', height: '500px' }}>
             <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={activityDurations}>
                     <CartesianGrid strokeDasharray="3 3" />
