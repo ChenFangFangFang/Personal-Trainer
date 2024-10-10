@@ -8,10 +8,20 @@ import Customer from './components/Customer';
 import Training from './components/Training';
 import Calendar from './components/Calendar';
 import Statistics from './components/Statistics';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+
+const theme = createTheme({
+  palette: {
+    training: {
+      main: '#c68f40',
+    }
+  },
+});
+
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,  // App 组件在这里被渲染
+    element: <App />,
     children: [
       {
         index: true,
@@ -41,6 +51,7 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <ThemeProvider theme={theme}>
+      <RouterProvider router={router} /></ThemeProvider>
   </StrictMode>
 );

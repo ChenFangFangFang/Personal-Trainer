@@ -14,8 +14,9 @@ import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
-
+import { useTheme } from '@emotion/react';
 export default function AddTraining(props) {
+    const theme = useTheme();
     const [open, setOpen] = React.useState(false);
     const [customer, setCustomer] = React.useState([])
     const [training, setTraining] = useState({
@@ -58,7 +59,7 @@ export default function AddTraining(props) {
             <Button
                 variant="contained"
                 onClick={handleClickOpen}
-                sx={{ marginBottom: 2 }} // This adds space below the button
+                sx={{ marginBottom: 2, backgroundColor: theme.palette.training.main }} // This adds space below the button
             >
                 Add a training
             </Button>

@@ -8,9 +8,10 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-
+import { useTheme } from '@mui/material/styles';
 
 export default function AddCustomer(props) {
+    const theme = useTheme();
     const [open, setOpen] = React.useState(false);
     const [customer, setCustomer] = React.useState({
         firstname: '', lastname: '', streetaddress: '', postcode: '', city: '', email: '', phone: ''
@@ -41,7 +42,7 @@ export default function AddCustomer(props) {
             <Button
                 variant="contained"
                 onClick={handleClickOpen}
-                sx={{ marginBottom: 2 }} // This adds space below the button
+                sx={{ marginBottom: 2, backgroundColor: theme.palette.training.main, }} // This adds space below the button
             >
                 Add New Customer
             </Button>

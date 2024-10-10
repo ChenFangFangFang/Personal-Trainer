@@ -14,6 +14,8 @@ import Alert from '@mui/material/Alert';
 import { ClientSideRowModelModule } from "@ag-grid-community/client-side-row-model";
 import { ModuleRegistry } from "@ag-grid-community/core";
 import { CsvExportModule } from "@ag-grid-community/csv-export";
+import { useTheme } from "@mui/material";
+
 // Register the CSV export module
 ModuleRegistry.registerModules([
     ClientSideRowModelModule,
@@ -23,7 +25,7 @@ ModuleRegistry.registerModules([
 
 export default function Customer() {
     const gridRef = useRef();
-
+    const theme = useTheme();
     const [customers, SetCustomers] = useState([])
     const [alert, setAlert] = useState({
         open: false,
@@ -54,7 +56,7 @@ export default function Customer() {
             headerName: 'Option',
             sortable: false,
             cellRenderer: (row) => (
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', color: theme.palette.training.main }}>
                     <EditCustomer updateCustomer={updateCustomer} customer={row.data} />
                     <DeleteCustomer deleteCustomer={deleteCustomer} customer={row.data} />
                 </div>
@@ -113,15 +115,17 @@ export default function Customer() {
     }
     // Function to export data as CSV
     const onBtnExport = useCallback(() => {
-        const date = new Date().toISOString().slice(0, 10); // Get current date in YYYY-MM-DD format
+        const date = new Date().toISOString().slice(0, 10);
+        // Get current date in YYYY-MM-DD format
         const filename = `customer_data_${date}.csv`;
-
         const exportColumns = columnDefs.filter(col => col.colId !== 'editColumn');
         const params = {
-            columnKeys: exportColumns.map(col => col.field), // Only include columns without the 'editColumn' colId
+            columnKeys: exportColumns.map(col => col.field),
+            // Only include columns without the 'editColumn' colId
             fileName: filename
         };
-        gridRef.current.api.exportDataAsCsv(params); // Export CSV if gridRef exists
+        gridRef.current.api.exportDataAsCsv(params);
+        // Export CSV if gridRef exists
 
     }, [columnDefs, gridRef]);
     return (
@@ -130,7 +134,7 @@ export default function Customer() {
             <Button
                 variant="contained"
                 onClick={onBtnExport}
-                sx={{ marginBottom: 2, marginLeft: 2 }} // This adds space below the button
+                sx={{ marginBottom: 2, marginLeft: 2, backgroundColor: theme.palette.training.main }} // This adds space below the button
             >
                 Export file
             </Button>

@@ -20,33 +20,36 @@ import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import BarChartIcon from '@mui/icons-material/BarChart';
-const drawerWidth = 200;
-const navItems = [
-  { name: 'Home', icon: <HomeIcon /> },
-  { name: 'Customer', icon: <PermIdentityIcon /> },
-  { name: 'Training', icon: <FitnessCenterIcon /> },
-  { name: 'Calendar', icon: <CalendarMonthIcon /> },
-  { name: 'Statistics', icon: <BarChartIcon /> }
-];
-function DrawerAppBar(props) {
-  const { window } = props;
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+import { useTheme } from '@mui/material/styles';
 
+
+function DrawerAppBar(props) {
+  const drawerWidth = 200;
+  //Sets the width of a sidebar drawer
+  const navItems = [
+    { name: 'Home', icon: <HomeIcon /> },
+    { name: 'Customer', icon: <PermIdentityIcon /> },
+    { name: 'Training', icon: <FitnessCenterIcon /> },
+    { name: 'Calendar', icon: <CalendarMonthIcon /> },
+    { name: 'Statistics', icon: <BarChartIcon /> }
+  ];
+  //Defines an array of navigation items
+  const { window } = props;
+  const theme = useTheme();
+  const [mobileOpen, setMobileOpen] = React.useState(false);
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
-  // Control the switch status of the sidebar (Drawer)
+  // Control the switch status of the sidebar
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography variant="h6" sx={{
-        my: 1,
-        backgroundColor: 'primary.main',
+        backgroundColor: theme.palette.training.main,
         padding: '12px',
         margin: 0,
         color: '#ffffff',
       }}>
-        {/* sx={{ my: 1 }}： control the padding */}
         Personal Training
       </Typography>
       <Divider />
@@ -57,7 +60,7 @@ function DrawerAppBar(props) {
               component={Link}
               to={`/${item.name.toLowerCase()}`}
               sx={{ display: 'flex', alignItems: 'left', textAlign: 'left' }}>
-              <ListItemIcon sx={{ marginRight: '-12px', color: (theme) => theme.palette.primary.main }}>
+              <ListItemIcon sx={{ marginRight: '-12px', color: theme.palette.training.main, }}>
                 {item.icon}
               </ListItemIcon>
               <Typography variant="body1" sx={{ color: 'inherit' }}>
@@ -75,10 +78,9 @@ function DrawerAppBar(props) {
 
   return (
     <Box sx={{ display: 'flex' }}>
-
       <CssBaseline />
-      <AppBar component="nav">
-        <Toolbar>
+      <AppBar component="nav" sx={{ backgroundColor: theme.palette.training.main, }}>
+        <Toolbar >
           <IconButton
             color="inherit"
             aria-label="open drawer"

@@ -35,7 +35,7 @@ export default function Statistics() {
                     <YAxis />
                     <Tooltip />
                     <Legend />
-                    <Bar dataKey="totalDuration" name="Activity" fill={theme.palette.primary.main} />
+                    <Bar dataKey="totalDuration" name="Activity" fill={theme.palette.training.main} />
                 </BarChart>
             </ResponsiveContainer>
         </div>

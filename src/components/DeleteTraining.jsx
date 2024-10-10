@@ -5,8 +5,9 @@ import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
-
+import { useTheme } from '@mui/material';
 export default function DeleteTraining(props) {
+    const theme = useTheme()
     const [open, setOpen] = React.useState(false);
     const [training, setTraining] = React.useState({ activity: '' })
     const handleClickOpen = () => {
@@ -31,7 +32,7 @@ export default function DeleteTraining(props) {
                 variant="outlined"
                 onClick={handleClickOpen}
                 size="small"
-                sx={{ marginBottom: 1, marginTop: 0.5 }} // This adds space below the button
+                sx={{ marginBottom: 1, marginTop: 0.5, color: theme.palette.training.main, borderColor: theme.palette.training.main, }} // This adds space below the button
             >
                 Delete
             </Button>

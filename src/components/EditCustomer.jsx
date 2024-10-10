@@ -7,9 +7,10 @@ import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
-
+import { useTheme } from '@mui/material';
 
 export default function EditCustomer(props) {
+    const theme = useTheme()
     const [open, setOpen] = React.useState(false);
     const [customer, setCustomer] = React.useState({
         firstname: '', lastname: '', streetaddress: '', postcode: '', city: '', email: '', phone: ''
@@ -53,7 +54,7 @@ export default function EditCustomer(props) {
                 variant="outlined"
                 onClick={handleClickOpen}
                 size="small"
-                sx={{ marginBottom: 1, marginTop: 0.5 }} // This adds space below the button
+                sx={{ marginBottom: 1, marginTop: 0.5, color: theme.palette.training.main, borderColor: theme.palette.training.main, }} // This adds space below the button
             >
                 Edit
             </Button>

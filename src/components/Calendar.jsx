@@ -53,15 +53,15 @@ export default function CalendarPage() {
                 endAccessor="end"
                 titleAccessor="title"
                 style={{ height: '100%', }}
+
                 components={{
                     event: ({ event }) => (
+
                         <div
-                            style={{
-                                backgroundColor: theme.palette.primary.main, // Set event background color to match the theme's primary color
-                                // padding: '5px',
-                                // borderRadius: '4px',
-                                color: '#ffffff', // White text color for contrast
-                            }}
+                        // style={{
+                        //     backgroundColor: theme.palette.training.main,
+
+                        // }}
                         >
                             {event.title}
                         </div>
