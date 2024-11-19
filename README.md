@@ -1,8 +1,33 @@
-# React + Vite
+### Project Description: Personal Trainer Frontend Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project involves developing a **React-based frontend application** for a Personal Trainer company to manage their customer and training data efficiently. The application integrates with a REST API to provide a seamless user experience.
 
-Currently, two official plugins are available:
+#### Features:
+- **Customer and Training Management**:
+  - View lists of customers and their training sessions.
+  - Include sorting, searching, and filtering functionalities.
+  - Format training session dates for better readability (e.g., `dd.mm.yyyy hh:mm`).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **CRUD Operations**:
+  - Add, edit, and delete customers with confirmation dialogs for deletions.
+  - Add training sessions to customers using a date picker for exercise dates.
+  - Delete training sessions with confirmation dialogs.
+
+- **Advanced Functionalities**:
+  - **Data Export**: Export customer data to a CSV file with relevant fields only.
+  - **Calendar View**: Visualize training schedules in a calendar (monthly, weekly, daily).
+
+- **Statistics Page**:
+  - Display statistics for training sessions (e.g., total minutes per activity) using bar charts.
+
+- **Deployment**:
+  - Host the application on a cloud platform for public access.
+
+#### Tools and Libraries:
+- **React**: Core framework for development.
+- **Day.js** or **Date-fns**: For date formatting.
+- **Recharts**: For creating visualizations.
+- **Lodash**: For efficient data manipulation.
+- **Git & GitHub**: For version control and collaboration. 
+
+This project combines modern frontend development practices with data management and visualization techniques, delivering a comprehensive solution for the client.
