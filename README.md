@@ -1,5 +1,10 @@
 ### Project Description: Personal Trainer Frontend Application
 
+### Deployment  
+The frontend application is deployed and accessible at:  
+[Customer Management Frontend - AWS Amplify Deployment](https://main.d244twoe51dy5.amplifyapp.com/customer)
+
+### Description
 This project involves developing a **React-based frontend application** for a Personal Trainer company to manage their customer and training data efficiently. The application integrates with a REST API to provide a seamless user experience.
 
 #### Features:
