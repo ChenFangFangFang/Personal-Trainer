@@ -1,4 +1,4 @@
-### Project Description: Personal Trainer Frontend Application
+# Personal Trainer Frontend Application
 
 ### Deployment  
 The frontend application is deployed and accessible at:  
